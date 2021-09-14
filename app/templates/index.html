@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Hi, {{ user.username }}!</h1>
+<table>
+    <thead>
+        <td>Vendedor</td>
+        <td>Mensaje</td>
+    </thead>        
+{% for interaction in interactions %}
+    <tr>
+        <td>{{ interaction.author.username }}</td>
+        <td><b>{{ interaction.body }}</b></td>
+    </tr>
+{% endfor %}
+</table>
+    
+{% endblock %}
